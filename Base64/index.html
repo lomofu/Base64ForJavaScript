@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Base64 For Js <span> support Chinese</span></h1>
+<input type="text" id="data"/>
+<input type="text" id="result"/>
+<button onclick="doClick()">点我</button>
+</body>
+<script src="Base64.js"></script>
+<script>
+    const dataDom = document.getElementById('data');
+    const resultDom = document.getElementById('result');
+
+    let data;
+    let temp;
+    let result;
+
+    function doClick() {
+        data = dataDom.value;
+        //how to use
+        //编码 加密
+        temp = encode64(strUnicode2Ansi(data));
+        // 解码 解密
+        result = strAnsi2Unicode(decode64(result));
+        resultDom.innerHTML=result;
+    }
+
+</script>
+</html>
